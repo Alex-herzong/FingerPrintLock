@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"EngineTest.obj" 
+TO "enginetest" 
+RAMSIZE(256) 

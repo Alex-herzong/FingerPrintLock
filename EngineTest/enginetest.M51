@@ -1,0 +1,180 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/15/2019  14:54:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, EngineTest.obj TO enginetest RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  EngineTest.obj (ENGINETEST)
+
+
+LINK MAP OF MODULE:  enginetest (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?ENGINETEST
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     002BH     UNIT         ?PR?TIME0_INT?ENGINETEST
+            CODE    082BH     001EH     UNIT         ?PR?_DELAYMS?ENGINETEST
+            CODE    0849H     0012H     UNIT         ?PR?TIME0_INIT?ENGINETEST
+            CODE    085BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0867H     000BH     UNIT         ?PR?MAIN?ENGINETEST
+
+
+
+OVERLAY MAP OF MODULE:   enginetest (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ENGINETEST
+
+?PR?MAIN?ENGINETEST
+  +--> ?PR?TIME0_INIT?ENGINETEST
+
+
+
+SYMBOL TABLE OF MODULE:  enginetest (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:085BH         SEGMENT       ?C_C51STARTUP
+  I:000AH         SEGMENT       ?STACK
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/15/2019  14:54:43  PAGE 2
+
+
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:085EH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:085BH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:085BH         LINE#         133
+  C:085DH         LINE#         134
+  C:085EH         LINE#         135
+  C:085FH         LINE#         136
+  C:0861H         LINE#         185
+  C:0864H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ENGINETEST
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0867H         PUBLIC        main
+  D:0008H         PUBLIC        count
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0849H         PUBLIC        Time0_Init
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  C:0800H         PUBLIC        Time0_Int
+  D:0009H         PUBLIC        jd
+  D:008AH         PUBLIC        TL0
+  B:00B8H.1       PUBLIC        PT0
+  B:0090H.0       PUBLIC        pwm
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  C:082BH         PUBLIC        _delayms
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/15/2019  14:54:43  PAGE 3
+
+
+  -------         DO            
+  D:0006H         SYMBOL        j
+  D:0004H         SYMBOL        k
+  -------         ENDDO         
+  C:082BH         LINE#         7
+  C:082BH         LINE#         8
+  C:082BH         LINE#         10
+  C:0834H         LINE#         11
+  C:0848H         LINE#         12
+  -------         ENDPROC       _DELAYMS
+  -------         PROC          TIME0_INIT
+  C:0849H         LINE#         14
+  C:0849H         LINE#         15
+  C:0849H         LINE#         16
+  C:084CH         LINE#         17
+  C:084FH         LINE#         18
+  C:0852H         LINE#         19
+  C:0854H         LINE#         20
+  C:0856H         LINE#         21
+  C:0858H         LINE#         22
+  C:085AH         LINE#         23
+  -------         ENDPROC       TIME0_INIT
+  -------         PROC          TIME0_INT
+  C:0800H         LINE#         25
+  C:0806H         LINE#         27
+  C:0809H         LINE#         28
+  C:080CH         LINE#         29
+  C:0813H         LINE#         30
+  C:0813H         LINE#         31
+  C:0815H         LINE#         32
+  C:0815H         LINE#         33
+  C:0815H         LINE#         34
+  C:0817H         LINE#         35
+  C:0819H         LINE#         36
+  C:081BH         LINE#         37
+  C:0824H         LINE#         38
+  C:0824H         LINE#         40
+  -------         ENDPROC       TIME0_INT
+  -------         PROC          MAIN
+  C:0867H         LINE#         42
+  C:0867H         LINE#         44
+  C:086AH         LINE#         45
+  C:086DH         LINE#         46
+  C:0870H         LINE#         47
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ENGINETEST
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYMS?ENGINETEST
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0078H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=120
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

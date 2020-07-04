@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"FingerPrintLock.obj" 
+TO "FingerPrintLock" 
+RAMSIZE(256) 

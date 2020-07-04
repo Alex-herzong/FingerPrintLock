@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"HardwareV2.obj" 
+TO "Hardware2" 
+RAMSIZE(256) 
